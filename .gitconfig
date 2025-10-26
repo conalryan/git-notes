@@ -8,51 +8,51 @@
 	helper = cache # cache or osxkeychain
 
 [alias]
-  cleanup = "!git branch --merged | grep  -v 'master\\|develop\\|release' | xargs -n 1 -r git branch -d"
-  
-  commend = !git commit --amend --no-edit
+    cleanup = "!git branch --merged | grep  -v 'master\\|develop\\|release' | xargs -n 1 -r git branch -d"
+    
+    commend = !git commit --amend --no-edit
 
-  # find merge commit on a branch that contains the given commit
-  # usage: git find-merge <commit hash> <branch-name>
-  find-merge = "!sh -c 'commit=$0 && branch=${1:-HEAD} && (git rev-list $commit..$branch --ancestry-path | cat -n; git rev-list $commit..$branch --first-parent | cat -n) | sort -k2 -s | uniq -f1 -d | sort -n | tail -1 | cut -f2'"
+    # find merge commit on a branch that contains the given commit
+    # usage: git find-merge <commit hash> <branch-name>
+    find-merge = "!sh -c 'commit=$0 && branch=${1:-HEAD} && (git rev-list $commit..$branch --ancestry-path | cat -n; git rev-list $commit..$branch --first-parent | cat -n) | sort -k2 -s | uniq -f1 -d | sort -n | tail -1 | cut -f2'"
 
-  lg1 = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
-  lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
-  lg = !git lg1
+    lg1 = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
+    lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
+    lg = !git lg1
 
-  # https://developer.atlassian.com/blog/2015/04/force-with-lease/
-  # https://git-scm.com/docs/git-push#git-push---no-force-with-lease
-  # only force push if the remote doesn't have any new content, not present locally
-  pl = push --force-with-lease
+    # https://developer.atlassian.com/blog/2015/04/force-with-lease/
+    # https://git-scm.com/docs/git-push#git-push---no-force-with-lease
+    # only force push if the remote doesn't have any new content, not present locally
+    pl = push --force-with-lease
 
-  redev = "!git checkout -- . && git checkout develop && git pull"
+    redev = "!git checkout -- . && git checkout develop && git pull"
 
-  # Terse git status
-  shorty = status --short --branch
+    # Terse git status
+    shorty = status --short --branch
 
-  # Show the merge commit that contains a given commit
-  # usage: git show-merge <commit-hash>
-  show-merge = !sh -c 'merge=$(git find-merge $0 $1) && [ -n \"$merge\" ] && git show $merge'
+    # Show the merge commit that contains a given commit
+    # usage: git show-merge <commit-hash>
+    show-merge = !sh -c 'merge=$(git find-merge $0 $1) && [ -n \"$merge\" ] && git show $merge'
 
-  # Checkout a branch from a Pull Request created from a private fork
-  # Alternative to:
-  #   [Create a new branch]
-  #   git fetch upstream refs/pull-requests/<pull-request-number>/from:<new-local-branch-name>
-  #   [checkout the created branch]
-  #   git checkout new-local-branch-name
-  stash-pr = "!f() { git fetch upstream refs/pull-requests/$1/from:$2; } ; f";
+    # Checkout a branch from a Pull Request created from a private fork
+    # Alternative to:
+    #   [Create a new branch]
+    #   git fetch upstream refs/pull-requests/<pull-request-number>/from:<new-local-branch-name>
+    #   [checkout the created branch]
+    #   git checkout new-local-branch-name
+    stash-pr = "!f() { git fetch upstream refs/pull-requests/$1/from:$2; } ; f";
 
 [color]
-	ui = true
+    ui = true
 
 [push]
-  default = simple # git push will fail if the branch isn't tracking a remote branch
+    default = simple # git push will fail if the branch isn't tracking a remote branch
 
 [rebase]
-  autostash = true # automatically create a temporary stash before the operation begins, and apply it after the operation ends
+    autostash = true # automatically create a temporary stash before the operation begins, and apply it after the operation ends
 
 [rerere]
 	enabled = false
 
 [status]
-  showUntrackedFiles = all # Shows individual files in untracked directories
+    showUntrackedFiles = all # Shows individual files in untracked directories
