@@ -7,7 +7,7 @@
 ## Feature A
 1. Run
 ```bash
-bash ./scripts/1-feature-a.sh
+./scripts/1-feature-a.sh
 ```
 2. Create Pull Request feature-a > master
 3. Merge Pull Request feature-a > master
@@ -17,7 +17,7 @@ bash ./scripts/1-feature-a.sh
 ## Feature B
 1. Run
 ```bash
-bash ./scripts/2-feature-b.sh
+./scripts/2-feature-b.sh
 ```
 2. Create Pull Request feature-b > master
 3. Merge Pull Request feature-b > master
@@ -51,7 +51,7 @@ git push
 ## Feature C
 1. Run
 ```bash
-bash ./scripts/3-feature-c.sh
+./scripts/3-feature-c.sh
 ```
 2. Create Pull Request feature-c > master
 3. Merge Pull Request feature-c > master
@@ -61,7 +61,7 @@ bash ./scripts/3-feature-c.sh
 ## Feature A Update
 1. Run
 ```bash
-bash ./scripts/4-feature-a-update.sh
+./scripts/4-feature-a-update.sh
 ```
 2. Create Pull Request feature-a > master
 3. Fix merge conflict
@@ -103,7 +103,7 @@ git push
 ## Let's try rebasing!
 1. Run
 ```bash
-bash ./scripts/reset.sh
+./scripts/reset.sh
 ```
 
 ![Init](img/no-ff-default/reset.png)
@@ -111,7 +111,7 @@ bash ./scripts/reset.sh
 ## Feature A
 1. Run
 ```bash
-bash ./scripts/1-feature-a.sh
+./scripts/1-feature-a.sh
 ```
 2. Create Pull Request feature-a > master
 3. Cleanup the commits to a few essential commits
@@ -158,7 +158,7 @@ git push --force
 ## Feature B
 1. Run
 ```bash
-bash ./scripts/2-feature-b.sh
+./scripts/2-feature-b.sh
 ```
 2. Create Pull Request feature-b > master
 3. Fix merge conflict
@@ -200,7 +200,7 @@ git push --force
 ## Feature C
 1. Run
 ```bash
-bash ./scripts/3-feature-c.sh
+./scripts/3-feature-c.sh
 ```
 2. Create Pull Request feature-c > master
 3. Cleanup the commits to a few essential commits
@@ -244,7 +244,7 @@ git push --force
 ## Feature A Update
 1. Run
 ```bash
-bash ./scripts/4-feature-a-update.sh
+./scripts/4-feature-a-update.sh
 ```
 2. Create Pull Request feature-a > master
 3. Fix merge conflict
@@ -287,9 +287,9 @@ git push --force
 # Experiment
 1. Run
 ```bash
-bash ./scripts/reset.sh
+./scripts/reset.sh
 ```
-2. Run through the steps above trying different techniques, if you get stuck, start again ```bash ./srcipts/reset.sh```. Keep in mind the reset.sh only resets branches created in the steps above. If you create additional branches/merges, they will not be cleanup up. If you get really stuck, delete your fork and re-fork it.
+2. Run through the steps above trying different techniques, if you get stuck, start again ```./srcipts/reset.sh```. Keep in mind the reset.sh only resets branches created in the steps above. If you create additional branches/merges, they will not be cleanup up. If you get really stuck, delete your fork and re-fork it.
 
 # Merge Strategies
 

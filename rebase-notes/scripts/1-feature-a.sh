@@ -1,4 +1,4 @@
-˜#!/bin/bash
+#!/bin/bash
 
 # Branched from latest master
 echo '--> # Branched from latest master:'
